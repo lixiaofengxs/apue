@@ -8,4 +8,4 @@ include_directories(${HEAD_PATH})
 
 set(LIBRARY_OUTPUT_PATH ${LIB_PATH})
 
-add_library(${APUE_LIB} STATIC ${SRC})
+add_library(${APUE_LIB} SHARED ${SRC})

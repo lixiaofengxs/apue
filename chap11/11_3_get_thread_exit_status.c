@@ -1,14 +1,12 @@
-#include <iostream>
+#include "apue.h"
 #include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 void* thr_fn1(void* arg) {
     printf("thread 1 returning\n");
     return ((void *)1);
 }
 
-void thr_fn2(void* arg) {
+void* thr_fn2(void* arg) {
     printf("thread 2 running\n");
     pthread_exit((void *)2);
 }
@@ -20,13 +18,13 @@ int main(void) {
 
     err = pthread_create(&tid1, NULL, thr_fn1, NULL);
     if (err != 0) {
-        std::cerr << "can't create thread 1. err: " << err << std::endl;
-        return err; 
+        err_exit(err, "can't create thread1"); 
     }
 
     err = pthread_create(&tid2, NULL, thr_fn2, NULL);
     if (err != 0) {
-        std::cerr << "can't create thread 2. err: " << err << std::endl;
-        return err; 
+        err_exit(err, "can't create thread2"); 
     }
+
+    return 0;
 }
