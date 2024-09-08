@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <signal.h>
+#include <time.h>
 
 #define MAXLINE 4096
 
