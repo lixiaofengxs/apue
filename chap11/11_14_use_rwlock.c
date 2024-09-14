@@ -93,3 +93,7 @@ struct job* job_find(struct queue*qp, pthread_t id) {
     pthread_rwlock_unlock(&qp->q_lock);
     return jp;
 }
+
+int main(int argc, char* argv[]) {
+    return 0;
+}
