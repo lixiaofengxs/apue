@@ -9,3 +9,4 @@ set(APUE_LIB apue)
 
 add_subdirectory(lib)
 add_subdirectory(chap11)
+add_subdirectory(chap12)
